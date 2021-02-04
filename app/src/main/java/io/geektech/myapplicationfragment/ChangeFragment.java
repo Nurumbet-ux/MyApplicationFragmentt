@@ -48,7 +48,6 @@ public class ChangeFragment extends Fragment implements IFragments {
         list.add(new MainModel("South Korea", "Мир здоровается", R.drawable.southkorea));
         list.add(new MainModel("Russia", "Мир здоровается", R.drawable.russia));
         list.add(new MainModel("Turkey", "Мир здоровается", R.drawable.turkey));
-
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new RecyclerAdapter(list, getActivity());
         adapter.setOnClickListener(this);
@@ -58,7 +57,7 @@ public class ChangeFragment extends Fragment implements IFragments {
     @Override
     public void displayDetails(String title, String subTitle, int image) {
         MainActivity activity = (MainActivity) getActivity();
-        if (activity !=null){
+        if (activity != null) {
             activity.displayDetails(title, subTitle, image);
         }
     }

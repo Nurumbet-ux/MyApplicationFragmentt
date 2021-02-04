@@ -35,7 +35,9 @@ public class MainActivity extends AppCompatActivity implements IFragments {
         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             TExtFragment fragment = (TExtFragment) fragmentManager.findFragmentById(R.id.fragment_second);
             FragmentTransaction transaction = fragmentManager.beginTransaction();
-            fragment.showText(title, subTitle, image);
+            if (fragment !=null){
+                fragment.showText(title, subTitle, image);
+            }
             transaction.commit();
         } else {
             Intent intent = new Intent(this, DetailActivity.class);

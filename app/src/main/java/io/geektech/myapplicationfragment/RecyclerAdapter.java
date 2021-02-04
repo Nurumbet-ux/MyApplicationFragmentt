@@ -69,7 +69,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
 
         @Override
         public void onClick(View view) {
-            if (listener != null) {
+            if (listener != null ) {
                 listener.displayDetails(model.getTitle(), model.getSubTitle(), model.getImage());
             }
         }
