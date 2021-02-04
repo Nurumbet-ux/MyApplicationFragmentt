@@ -18,45 +18,13 @@ import java.util.ArrayList;
 
 public class ChangeFragment extends Fragment implements IFragments {
 
-
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    private String mParam1;
-    private String mParam2;
-
-    IFragments iFragments;
-
     private ArrayList<MainModel> list;
     private RecyclerView recyclerView;
     private RecyclerAdapter adapter;
 
-    public ChangeFragment() {
-    }
-
-//
-//    @Override
-//    public void onAttach(@NonNull Context context) {
-//        super.onAttach(context);
-//        iFragments = (IFragments) context;
-//    }
-
-    public static ChangeFragment newInstance(String param1, String param2) {
-        ChangeFragment fragment = new ChangeFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -90,7 +58,9 @@ public class ChangeFragment extends Fragment implements IFragments {
     @Override
     public void displayDetails(String title, String subTitle, int image) {
         MainActivity activity = (MainActivity) getActivity();
-        activity.displayDetails(title, subTitle, image);
+        if (activity !=null){
+            activity.displayDetails(title, subTitle, image);
+        }
     }
 
 
