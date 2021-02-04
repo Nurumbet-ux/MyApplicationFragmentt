@@ -17,5 +17,6 @@
         android:name="io.geektech.myapplicationfragment.TExtFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="2" />
+        android:layout_weight="2"
+        tools:layout="@layout/fragment_t_ext"/>
 </LinearLayout>

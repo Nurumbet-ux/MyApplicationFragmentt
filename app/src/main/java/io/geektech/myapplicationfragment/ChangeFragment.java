@@ -50,7 +50,7 @@ public class ChangeFragment extends Fragment implements IFragments {
         list.add(new MainModel("Turkey", "Мир здоровается", R.drawable.turkey));
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new RecyclerAdapter(list, getActivity());
-        adapter.setOnClickListener(this);
+        adapter.setOnClickListener((IFragments) this);
         recyclerView.setAdapter(adapter);
     }
 
