@@ -53,7 +53,6 @@ public class ChangeFragment extends Fragment implements IFragments {
         adapter.setOnClickListener((IFragments) this);
         recyclerView.setAdapter(adapter);
     }
-
     @Override
     public void displayDetails(String title, String subTitle, int image) {
         MainActivity activity = (MainActivity) getActivity();

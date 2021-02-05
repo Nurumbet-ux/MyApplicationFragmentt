@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:background="@android:color/holo_green_light"
     android:orientation="vertical"
-    tools:context=".TExtFragment">
+    tools:context=".TExtFragment"
+    >
 
     <TextView
         android:id="@+id/txtView"

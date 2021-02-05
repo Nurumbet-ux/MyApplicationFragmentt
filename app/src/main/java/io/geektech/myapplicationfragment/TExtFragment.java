@@ -23,7 +23,6 @@ public class TExtFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
     public static TExtFragment newInstance(String title,String subTitle,int image){
         TExtFragment tExtFragment = new TExtFragment();
@@ -34,7 +33,6 @@ public class TExtFragment extends Fragment {
         tExtFragment.setArguments(args);
         return tExtFragment;
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
