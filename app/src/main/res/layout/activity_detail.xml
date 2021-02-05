@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
-    <fragment
+    <FrameLayout
         android:id="@+id/fragmentText"
         android:name="io.geektech.myapplicationfragment.TExtFragment"
         android:layout_width="match_parent"

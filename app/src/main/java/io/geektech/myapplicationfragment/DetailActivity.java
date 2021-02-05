@@ -13,7 +13,6 @@ public class DetailActivity extends AppCompatActivity {
     private String title;
     private String subTitle;
     private int image;
-    MainModel model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +25,7 @@ public class DetailActivity extends AppCompatActivity {
             subTitle = intent.getStringExtra(MainActivity.KEY_DESC);
             image = intent.getIntExtra(MainActivity.KEY_IMAGE, 0);
         }
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        TExtFragment fragment = (TExtFragment) fragmentManager.findFragmentById(R.id.fragmentText);
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        if(fragment !=null){
-            fragment.showText(title, subTitle, image);
-        }
-        transaction.commit();
+         TExtFragment fragment = TExtFragment.newInstance(title,subTitle,image);
+         getSupportFragmentManager().beginTransaction().add(R.id.fragmentText,fragment).commit();
     }
 }

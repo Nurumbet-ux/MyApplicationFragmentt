@@ -12,6 +12,9 @@ import android.widget.TextView;
 
 
 public class TExtFragment extends Fragment {
+    private static final String ARG_TITLE = "argsTitle";
+    private static final String ARG_SUBTITLE = "argsSubTitle";
+    private static final String ARG_IMAGE = "argsImage";
 
     private TextView tExtView;
     private TextView txtSubTitle;
@@ -22,6 +25,15 @@ public class TExtFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
     }
+    public static TExtFragment newInstance(String title,String subTitle,int image){
+        TExtFragment tExtFragment = new TExtFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_TITLE,title);
+        args.putString(ARG_SUBTITLE,subTitle);
+        args.putInt(ARG_IMAGE,image);
+        tExtFragment.setArguments(args);
+        return tExtFragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,13 +42,12 @@ public class TExtFragment extends Fragment {
         tExtView = view.findViewById(R.id.txtView);
         txtSubTitle = view.findViewById(R.id.txtSubTitle);
         imageView = view.findViewById(R.id.image1);
+        if (getArguments()!=null){
+            tExtView.setText(getArguments().getString(ARG_TITLE));
+            txtSubTitle.setText(getArguments().getString(ARG_SUBTITLE));
+            imageView.setImageResource(getArguments().getInt(ARG_IMAGE));
+        }
         return view;
     }
 
-    public void showText(String text, String subTitle, int image) {
-        tExtView.setText(text);
-        txtSubTitle.setText(subTitle);
-        imageView.setImageResource(image);
-
-    }
 }
